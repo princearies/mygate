@@ -347,12 +347,12 @@ function App() {
         <footer className={`mt-12 sm:mt-16 text-center transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.06]">
             <span className="text-xs text-gray-500">Powered by</span>
-            <span className="text-xs font-medium text-gray-300">Cloudflare Workers</span>
+            <span className="text-xs font-medium bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">mykira</span>
             <span className="text-xs text-gray-500">•</span>
-            <span className="text-xs text-gray-500">mykira.workers.dev</span>
+            <span className="text-xs text-gray-400">2026</span>
           </div>
           <p className="text-xs text-gray-600 mt-3">
-            © {new Date().getFullYear()} MyGate Dynamic Gateway
+            © 2026 MyGate Dynamic Gateway
           </p>
         </footer>
       </div>
