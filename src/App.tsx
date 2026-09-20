@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, FormEvent } from 'react'
 
 interface ToolCard {
   id: number
@@ -61,7 +61,23 @@ const tools: ToolCard[] = [
 function App() {
   const [currentTime, setCurrentTime] = useState(new Date())
   const [searchQuery, setSearchQuery] = useState('')
+  const [duckQuery, setDuckQuery] = useState('')
   const [isLoaded, setIsLoaded] = useState(false)
+
+  const quickSearches = [
+    { icon: '📰', label: 'Berita', query: 'berita terkini hari ini' },
+    { icon: '🌤️', label: 'Cuaca', query: 'cuaca Malaysia hari ini' },
+    { icon: '💻', label: 'Tech', query: 'teknologi terbaru 2026' },
+    { icon: '📚', label: 'Belajar', query: 'tutorial programming' },
+    { icon: '🎬', label: 'Hiburan', query: 'filem popular 2026' },
+  ]
+
+  const handleDuckSearch = (e: FormEvent) => {
+    e.preventDefault()
+    if (duckQuery.trim()) {
+      window.open(`https://duckduckgo.com/?q=${encodeURIComponent(duckQuery.trim())}`, '_blank')
+    }
+  }
 
   useEffect(() => {
     setIsLoaded(true)
@@ -191,6 +207,81 @@ function App() {
           <div className="text-center">
             <div className="text-2xl sm:text-3xl font-bold text-blue-400">24/7</div>
             <div className="text-xs text-gray-500 uppercase tracking-wider">Uptime</div>
+          </div>
+        </div>
+
+        {/* DuckDuckGo Search Section */}
+        <div className={`max-w-2xl mx-auto mb-8 sm:mb-12 transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="relative">
+            {/* Glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 via-amber-500/10 to-orange-500/10 rounded-3xl blur-2xl"></div>
+            
+            <div className="relative p-5 sm:p-6 bg-white/[0.03] border border-white/[0.08] rounded-3xl backdrop-blur-sm">
+              {/* Header */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center shadow-lg shadow-orange-500/20">
+                  <span className="text-lg">🦆</span>
+                </div>
+                <div>
+                  <h2 className="text-sm sm:text-base font-semibold text-white">Carian DuckDuckGo</h2>
+                  <p className="text-xs text-gray-500">Cari apa sahaja di internet</p>
+                </div>
+              </div>
+
+              {/* Search Form */}
+              <form onSubmit={handleDuckSearch} className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-amber-500/20 rounded-2xl blur-xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative flex items-center gap-3">
+                  <div className="relative flex-1">
+                    <span className="absolute left-4 text-gray-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </span>
+                    <input
+                      type="text"
+                      placeholder="Taip carian anda di sini..."
+                      value={duckQuery}
+                      onChange={(e) => setDuckQuery(e.target.value)}
+                      className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="flex-shrink-0 px-5 py-3.5 bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-400 hover:to-amber-500 rounded-2xl text-white font-medium text-sm transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/25 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                    <span className="hidden sm:inline">Cari</span>
+                  </button>
+                </div>
+              </form>
+
+              {/* Quick Links */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {quickSearches.map((qs, i) => (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      setDuckQuery(qs.query)
+                      window.open(`https://duckduckgo.com/?q=${encodeURIComponent(qs.query)}`, '_blank')
+                    }}
+                    className="px-3 py-1.5 text-xs rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-200"
+                  >
+                    {qs.icon} {qs.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Tool Cards Section Title */}
+        <div className={`text-center mb-6 transition-all duration-1000 delay-600 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.06] mb-3">
+            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+            <span className="text-xs text-gray-400 uppercase tracking-wider font-medium">Alat Tersedia</span>
           </div>
         </div>
 
