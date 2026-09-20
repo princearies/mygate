@@ -55,6 +55,15 @@ const tools: ToolCard[] = [
     icon: '💧',
     gradient: 'from-rose-500 via-pink-500 to-red-500',
     tag: 'Engineering'
+  },
+  {
+    id: 6,
+    title: 'KiraBina',
+    description: 'Alat pembinaan & pembangun pintar',
+    url: 'https://kirabina.mykira.workers.dev/',
+    icon: '🏗️',
+    gradient: 'from-indigo-500 via-purple-500 to-pink-500',
+    tag: 'Builder'
   }
 ]
 
