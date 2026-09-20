@@ -185,12 +185,13 @@ function App() {
                 placeholder="Cari alat..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base"
+                className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm text-base"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-4 text-gray-400 hover:text-white transition-colors"
+                  aria-label="Kosongkan carian"
+                  className="absolute right-1 flex items-center justify-center h-11 w-11 min-h-[44px] min-w-[44px] text-gray-400 hover:text-white active:text-white transition-colors"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -252,7 +253,7 @@ function App() {
                       placeholder="Taip carian anda di sini..."
                       value={duckQuery}
                       onChange={(e) => setDuckQuery(e.target.value)}
-                      className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base"
+                      className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 focus:bg-white/10 transition-all duration-300 backdrop-blur-sm text-base"
                     />
                   </div>
                   <button
@@ -276,7 +277,7 @@ function App() {
                       setDuckQuery(qs.query)
                       window.open(`https://duckduckgo.com/?q=${encodeURIComponent(qs.query)}`, '_blank')
                     }}
-                    className="px-3 py-1.5 text-xs rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-200"
+                    className="min-h-[44px] px-4 py-2.5 text-xs sm:text-sm rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 active:bg-white/15 hover:border-white/20 transition-all duration-200"
                   >
                     {qs.icon} {qs.label}
                   </button>
@@ -309,7 +310,7 @@ function App() {
               <div className={`absolute inset-0 bg-gradient-to-r ${tool.gradient} rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
               
               {/* Card */}
-              <div className="relative h-full p-5 sm:p-6 bg-white/[0.03] border border-white/[0.08] rounded-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:border-white/[0.15] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20">
+              <div className="relative h-full p-5 sm:p-6 bg-white/[0.03] border border-white/[0.08] rounded-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:border-white/[0.15] active:bg-white/[0.08] active:border-white/[0.2] active:scale-[0.98] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20">
                 {/* Tag */}
                 <div className="flex items-center justify-between mb-4">
                   <span className={`text-xs font-medium px-2.5 py-1 rounded-full bg-gradient-to-r ${tool.gradient} bg-opacity-20 text-white/80`}>
