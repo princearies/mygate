@@ -64,6 +64,15 @@ const tools: ToolCard[] = [
     icon: '🏗️',
     gradient: 'from-indigo-500 via-purple-500 to-pink-500',
     tag: 'Builder'
+  },
+  {
+    id: 7,
+    title: 'e-Invois Sabah',
+    description: 'Jana invois patuh LHDN, PDF & kongsi WhatsApp',
+    url: 'https://e-invois.mykira.workers.dev/',
+    icon: '📄',
+    gradient: 'from-sky-500 via-blue-500 to-cyan-500',
+    tag: 'Invois'
   }
 ]
 
