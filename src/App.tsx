@@ -73,6 +73,15 @@ const tools: ToolCard[] = [
     icon: '📄',
     gradient: 'from-sky-500 via-blue-500 to-cyan-500',
     tag: 'Invois'
+  },
+  {
+    id: 8,
+    title: 'Audio Converter',
+    description: 'Penukar audio & fail media',
+    url: 'https://audioconverter.mykira.workers.dev/',
+    icon: '🎧',
+    gradient: 'from-green-500 via-emerald-500 to-teal-500',
+    tag: 'Converter'
   }
 ]
 
