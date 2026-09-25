@@ -81,7 +81,16 @@ const tools: ToolCard[] = [
     url: 'https://audioconverter.mykira.workers.dev/',
     icon: '🎧',
     gradient: 'from-green-500 via-emerald-500 to-teal-500',
-    tag: 'Converter'
+    tag: 'Converter',
+  },
+  {
+    id: 9,
+    title: 'AwangBot',
+    description: 'Portal Multi-Bot & bantuan AI',
+    url: 'https://awangbotv3.mykira.workers.dev/',
+    icon: '🤖',
+    gradient: 'from-green-500 via-emerald-500 to-teal-500',
+    tag: 'Bot'
   }
 ]
 
