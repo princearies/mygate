@@ -89,8 +89,17 @@ const tools: ToolCard[] = [
     description: 'Portal Multi-Bot & bantuan AI',
     url: 'https://awangbotv3.mykira.workers.dev/',
     icon: '🤖',
-    gradient: 'from-green-500 via-emerald-500 to-teal-500',
+    gradient: 'from-amber-500 via-orange-500 to-red-500',
     tag: 'Bot'
+  },
+  {
+    id: 10,
+    title: 'Potong Rumput',
+    description: 'Marketplace potong rumput / handyman on-demand Putatan-KK',
+    url: 'https://potong-rumput-frontend.pages.dev/',
+    icon: '🌿',
+    gradient: 'from-green-500 via-lime-500 to-emerald-500',
+    tag: 'Servis'
   }
 ]
 
