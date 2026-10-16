@@ -100,6 +100,15 @@ const tools: ToolCard[] = [
     icon: '🌿',
     gradient: 'from-green-500 via-lime-500 to-emerald-500',
     tag: 'Servis'
+  },
+  {
+    id: 11,
+    title: 'Bayar Crypto',
+    description: 'Bayar order MyKira Niaga dengan SOL / USDC via Phantom',
+    url: 'https://awangbotv3.mykira.workers.dev/pay',
+    icon: '💳',
+    gradient: 'from-violet-500 via-purple-500 to-indigo-500',
+    tag: 'Bayar'
   }
 ]
 
