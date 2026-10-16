@@ -104,11 +104,20 @@ const tools: ToolCard[] = [
   {
     id: 11,
     title: 'Bayar Crypto',
-    description: 'Bayar order MyKira Niaga dengan SOL / USDC via Phantom',
+    description: 'Bayar order MyKira Niaga dengan SOL / USDC',
     url: 'https://awangbotv3.mykira.workers.dev/pay',
     icon: '💳',
     gradient: 'from-violet-500 via-purple-500 to-indigo-500',
     tag: 'Bayar'
+  },
+  {
+    id: 12,
+    title: 'Derma ☕',
+    description: 'Suka tools free ni? Belanja kopi — DuitNow / SOL / USDC / PayPal',
+    url: 'https://awangbotv3.mykira.workers.dev/pay?donate=1',
+    icon: '☕',
+    gradient: 'from-amber-500 via-orange-500 to-yellow-500',
+    tag: 'Derma'
   }
 ]
 
