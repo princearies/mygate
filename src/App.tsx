@@ -1,4 +1,5 @@
 import { useState, useEffect, FormEvent } from 'react'
+import MyKiraShop from './components/MyKiraShop'
 
 interface ToolCard {
   id: number
@@ -118,6 +119,15 @@ const tools: ToolCard[] = [
     icon: '☕',
     gradient: 'from-amber-500 via-orange-500 to-yellow-500',
     tag: 'Derma'
+  },
+  {
+    id: 13,
+    title: 'MyKiraShop',
+    description: 'Kedai print-on-demand — baju & aksesori dicetak selepas order',
+    url: 'https://mykirashop.mykira.workers.dev/',
+    icon: '🛍️',
+    gradient: 'from-violet-500 via-purple-500 to-pink-500',
+    tag: 'Kedai'
   }
 ]
 
@@ -126,6 +136,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('')
   const [duckQuery, setDuckQuery] = useState('')
   const [isLoaded, setIsLoaded] = useState(false)
+  const [view, setView] = useState<'tools' | 'catalog'>('tools')
 
   const quickSearches = [
     { icon: '📰', label: 'Berita', query: 'berita terkini hari ini' },
@@ -224,6 +235,43 @@ function App() {
           </div>
         </header>
 
+        {/* View Tabs */}
+        <div className={`flex justify-center mb-8 sm:mb-10 transition-all duration-1000 delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="inline-flex p-1 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-sm">
+            <button
+              onClick={() => setView('tools')}
+              className={`min-h-[44px] px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
+                view === 'tools'
+                  ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25'
+                  : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              🛠️ Alat
+            </button>
+            <button
+              onClick={() => setView('catalog')}
+              className={`min-h-[44px] px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
+                view === 'catalog'
+                  ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25'
+                  : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              🛍️ Shop
+            </button>
+            {/* Pautan keluar ke kedai sebenar (MyKiraShop) */}
+            <a
+              href="https://mykirashop.mykira.workers.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="min-h-[44px] px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-1 text-emerald-300/90 border border-emerald-400/25 hover:text-white hover:border-emerald-400/60 hover:bg-emerald-500/10"
+            >
+              🛒 Kedai
+            </a>
+          </div>
+        </div>
+
+        {view === 'tools' && (
+          <>
         {/* Search Bar */}
         <div className={`max-w-md mx-auto mb-8 sm:mb-10 transition-all duration-1000 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="relative group">
@@ -406,6 +454,11 @@ function App() {
             <p className="text-gray-400">Tiada alat ditemui untuk "{searchQuery}"</p>
           </div>
         )}
+          </>
+        )}
+
+        {/* MyKiraShop */}
+        {view === 'catalog' && <MyKiraShop />}
 
         {/* Footer */}
         <footer className={`mt-12 sm:mt-16 text-center transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
