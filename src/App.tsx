@@ -13,6 +13,15 @@ interface ToolCard {
 
 const tools: ToolCard[] = [
   {
+    id: 13,
+    title: 'MyKiraNiaga',
+    description: 'Enjin carian dropship + chat AI — harga MYR, checkout WhatsApp/Telegram',
+    url: 'https://mykiraniaga.mykira.workers.dev/',
+    icon: '🛒',
+    gradient: 'from-cyan-500 via-sky-500 to-blue-600',
+    tag: 'Shop'
+  },
+  {
     id: 1,
     title: 'Audio Studio',
     description: 'Platform audio processing & conversion tool',
