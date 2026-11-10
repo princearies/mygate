@@ -246,10 +246,10 @@ function App() {
 
         {/* View Tabs */}
         <div className={`flex justify-center mb-8 sm:mb-10 transition-all duration-1000 delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="inline-flex p-1 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-sm">
+          <div className="inline-flex flex-wrap justify-center gap-1 p-1 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-sm">
             <button
               onClick={() => setView('tools')}
-              className={`min-h-[44px] px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
+              className={`min-h-[44px] px-3.5 sm:px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
                 view === 'tools'
                   ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25'
                   : 'text-gray-400 hover:text-white'
@@ -259,7 +259,7 @@ function App() {
             </button>
             <button
               onClick={() => setView('catalog')}
-              className={`min-h-[44px] px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
+              className={`min-h-[44px] px-3.5 sm:px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
                 view === 'catalog'
                   ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25'
                   : 'text-gray-400 hover:text-white'
@@ -272,9 +272,18 @@ function App() {
               href="https://mykirashop.mykira.workers.dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="min-h-[44px] px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-1 text-emerald-300/90 border border-emerald-400/25 hover:text-white hover:border-emerald-400/60 hover:bg-emerald-500/10"
+              className="min-h-[44px] px-3.5 sm:px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-1 text-emerald-300/90 border border-emerald-400/25 hover:text-white hover:border-emerald-400/60 hover:bg-emerald-500/10"
             >
               🛒 Kedai
+            </a>
+            {/* Pautan keluar ke Ringcut — YouTube to ringtone (MP3 / M4R) */}
+            <a
+              href="https://ringcut-web.pages.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="min-h-[44px] px-3.5 sm:px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-1 text-fuchsia-300/90 border border-fuchsia-400/25 hover:text-white hover:border-fuchsia-400/60 hover:bg-fuchsia-500/10"
+            >
+              🎵 Ringtone
             </a>
           </div>
         </div>
