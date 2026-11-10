@@ -13,7 +13,7 @@ interface ToolCard {
 
 const tools: ToolCard[] = [
   {
-    id: 13,
+    id: 14,
     title: 'MyKiraNiaga',
     description: 'Enjin carian dropship + chat AI — harga MYR, checkout WhatsApp/Telegram',
     url: 'https://mykiraniaga.mykira.workers.dev/',
