@@ -137,6 +137,15 @@ const tools: ToolCard[] = [
     icon: '🛍️',
     gradient: 'from-violet-500 via-purple-500 to-pink-500',
     tag: 'Kedai'
+  },
+  {
+    id: 15,
+    title: 'Ringtone Maker',
+    description: 'Tukar lagu YouTube jadi ringtone — potong tepat, MP3 (Android) / M4R (iPhone)',
+    url: 'https://ringcut-web.pages.dev/',
+    icon: '🎵',
+    gradient: 'from-indigo-500 via-violet-500 to-fuchsia-500',
+    tag: 'Audio'
   }
 ]
 
